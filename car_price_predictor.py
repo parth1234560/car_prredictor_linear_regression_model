@@ -27,7 +27,7 @@ st.markdown("Enter the car's features to get an estimated price")
 # Load and clean data
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\PARTH\Documents\Summer internship\Streamlit_all_project\car_data.csv")  # Adjust path as needed
+    df = pd.read_csv("car_data.csv")  # Adjust path as needed
     df['Price'] = df['Price'].str.replace("Rs. ", "").str.replace(" Lakh", "").str.replace(",", "")
     df['Price'] = pd.to_numeric(df['Price'], errors='coerce') * 100000
 
